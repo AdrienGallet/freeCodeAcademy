@@ -91,6 +91,147 @@ HTML5 Eelements
 		- <head></head> includes elements such as <link />, <meta />, <tytle /> and <style />
 
 
+Date: 2021.08.01
+	Second day, learning more about syping and basic CSS
+
+- Style attribute
+	<h2 style="color: blue;">CatPhotoApp</h2> <!-- inline style -->
+		- Good practice to end style declarations with ";"
+		- CSS: Cascading style sheets
+	- A better way to add style is through a "style block"
+		<style>
+			h2 {
+				color: red;
+			}
+		</style>
+			- providing {} brackets indicates the style for all "h2" elements
+			- Make sure to provide a semicolon for each element's stule rule
+	- Also possible to create style classes
+		<style>
+			.blue-text {
+				color: blue;
+			}
+		</style>
+			- Now we can indicate the "blue-text" style class as a style for an element, providing good re-usability
+			- Style classes always start with a period (.style_name)
+				<h2 class="blue-text">Random header</h2>
+
+- Style CSS properties
+	<style>
+		h1 {
+			color: blue;
+			font-size: 30px;
+			font-family: sans-serif, sans-serif; /* sans-serif is the default font here */
+			width: 500px; /*sets image width*/
+			border-color: red;
+			border-width: 5px;
+			border-style: solid;
+			border-radius:  10px; /* can also be specified in %*/
+			background-color:  green;
+		}
+	</style>
+		- It is possible to import custom fonts. It needs to be referneced through the use of a <link>, with the "rel" and "type" attributes (not clear how to do this just yet)
+		- Multiple styles can be applied by using: "class="style1 style2"
+			- Precedence is based on which style is defined last
+
+- ID
+	- Important for styling, especially when used with Javascript
+	- Each id attribute should be unique (good practice)
+		- Do not use the same id more than once
+	- Ids can be styled, and have higher specificit.
+	- Ids are referenced by the hash symbol within the <style></style> block
+	<style>
+		#cat-photo-element {
+			background-color:  green;
+		}
+	</style>
+
+- HTML elements
+	- All HTML elements are essentially rectangles, and have three properties:
+		- padding: amount of space between element's content and the border (bigger padding, bigger border box)
+		- border:
+		- margin: controls the space between the border and surrounding elements (bigger margin, smaller border box)
+			- Hence, negative margins will increase the border box to surrounding elements
+	- Options
+		- General "padding", or "padding-top", "padding-right", "padding-bottom", "padding-left"
+		- Genera "margin", or "margin-top", "margin-right", "margin-bottom", "margin-left"
+	- Concises commands
+		- Instead of:
+		<style>
+			.test-class {
+				padding-top: 20px;
+				padding-right: 40px;
+				padding-bottom: 50px;
+				padding-left : 60px;
+			}
+		</style>
+
+		- One can also write
+		<style>
+			.test-class {
+				padding:  20px 40px 10px 20px; /*Order it top right bottom left; (clockwise) */
+			}
+		</style>
+		- Same applies to margin
+
+- CSS selectors
+	- There are various style selectors (besides "id" (#) or "class" (.))
+	- Another selector is the attribute selector
+		<style>
+			[type='radio'] { /*doesn't need to be '' quotes, "" work as well */
+				margin:  20px 0px 20px 0px;
+			}
+		</style>
+
+- Units and length measurements
+	- Two main types of measurements:
+		- Absolute: mm, in, px
+		- Relative: em, rem ("em" is based on font, rem don't know yet)
+
+- CSS inheritance
+	- Body can also be styled, meaning everything within the "body" of the document will be styled that way.
+		<style>
+			body {
+				background-color:  black;
+			}
+
+			.pink-text {
+				color:  pink !important;
+			}
+
+			.blue-text {
+				color:  blue;
+			}
+		</style>
+	- However, if an element within "body" has another style attached to it, then it will be overwritten by this style
+		<h1 class="pink-text">Hello world</h1> <!-- will over-write "body" -->
+	- If multiple styles are attached to the SAME element, then the last style written wihin the <style></style> block will be applied
+		- Note the order within the element does not matter here
+		<h1 class="pink-text blue-text">Hello world</h1> <!-- blue-text will be applied -->
+	- If an id class is set, then id-classes will ALWAYS take precedence (id is king)
+	- Inline styles over-ride id styles
+	- Lastly, the keyword "!important" over-rides all other CSS styles
+		- Note that if more than one style has !important, then the same precedence method is used as outlined below
+	- ORDER OF PRECEDENCE
+		- class (last is applied) < id (always unique) < in-line < !important
+
+- Hexadecimals and colors
+	- Uses 10 decimals (0-9) as well as first six letter (A-F) for a number system in base 16. Hence, with two "digits", one can describe up to 256 different numbers. This is useful for RGB schemes, where a seperate 0-255 number is provided for red, green, blue.
+	- Hence, colors can be described by the #XXXXXX scheme
+		- This creates 16,777,216 colors
+	- A shorter version exists, #XXX
+		- This reduces it to 4096 colors
+	- A further option uses the rbg(X, X, X) command
+		- Where X is 0-255 for RGB respectively
+	
+
+
+
+
+
+
+
+
 
 - Side note:
 	- There are elements, which each can have attributes (which will depend on the element). Some elements are self-closed (like an image), whilst others are not.
