@@ -1,0 +1,70 @@
+<!-- General Structure
+  - <!DOCTYPE ...> to indicate version of html
+  - <html><head><body> with closing tags (</...>) -->
+
+<!DOCTYPE html>
+  <html>
+    <head>
+      <!-- Notice that each element constains a:
+        - Start tag <title>
+        - Some content "CatPhotoApp"
+        - End-tag <!title> -->
+      <title>CatPhotoApp</title>
+    </head>
+
+    <body>
+      <h2>CatPhotoApp</h2>
+      <main>
+
+        <!-- This is an example of attributes of an element.
+          - They are always placed into the start-tag
+          - Comes in a name="value" pair (name/value pair) -->
+        <a href="#footer">Jump to Bottom</a> <!-- Anchor element for hyperlinks -->
+
+        <!-- image element with "src" and "alt" attributes -->
+        <img src="https://www.bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back.">
+
+        <!-- Simple paragraphs -->
+        <p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff. P</p>
+        <p>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>
+
+        <!-- dividers, not sure what they are used for yet -->
+          <div>
+            <p>Things cats love:</p>
+            <ul> <!-- Un-ordered list, with <li></li> elements -->
+              <li>cat nip</li>
+              <li>laser pointers</li>
+              <li>lasagna</li>
+            </ul> <!-- Ordered lists, with <li></li> elements -->
+            <p>Top 3 things cats hate:</p>
+            <ol>
+              <li>flea treatment</li>
+              <li>thunder</li>
+              <li>other cats</li>
+            </ol>
+          </div>
+
+        <!-- form element, which can implement an action to a specific site -->
+        <form action="https://freecatphotoapp.com/submit-cat-photo">
+          <!-- input element, which exist of different types
+            - Types covered so far: radio, checkbox
+            - Can contain certain value-less attributes: checked, required
+            - Can create groups by giving the same inputs the same name
+            - Labels inform the name of a check-box
+            - "id", with the "for" statement help to group elements
+            - provide a "value" category to determine the actual name="value" response registered for that input -->
+          <label><input type="radio" name="indoor-outdoor" checked> Indoor</label>
+          <label><input type="radio" name="indoor-outdoor"> Outdoor</label><br>
+          <label><input type="checkbox" name="personality" checked> Loving</label>
+          <label><input type="checkbox" name="personality"> Lazy</label>
+          <label><input type="checkbox" name="personality"> Energetic</label><br>
+          <input type="text" placeholder="cat photo URL" required>
+          <button type="submit">Submit</button>
+        </form>
+
+      </main>
+
+    </body>
+
+    <footer id="footer">Copyright Cat Photo App</footer>
+</html>

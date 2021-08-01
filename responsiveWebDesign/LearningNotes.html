@@ -1,0 +1,99 @@
+<!-- HTML learning notes -->
+
+Date: 2021.07.30
+	First day of FreeCodeCamp, the general course outline for their "Responsive Web Design" course is:
+		- Learn the basics of HTML and CSS (build a cath photo app)
+		- Learn CSS variables (building a penguin)
+		- Learn best practices for accesbibility by building a web form
+		- Learn how to make webpages responsive to different sizes
+			-Ex: Twitter card with Flexbox, complex blog layout with CSS Grid
+
+Basic HTML and HTML5
+- Markup language
+- Usually has opening and closing tags around content.
+	- Ex: <x> and </x>, notice the forward slash
+- <h1></h1> up to <h6></h6> header elements available
+- <p></p> used for paragraphs
+- Note that normally all captions are written in lowercase (<p></p> and not <P></P>)
+- Commments are important to keep code read-able
+	- Start with < !-- and end with - -> (no space normally, but needed here)
+
+HTML5 Eelements
+- These include: main, header, footer, na, video, article, section and others
+
+- Add images using:
+	<img src="URL">
+		- Where "src" stands for source
+		- and URL is where the image can be found
+		- Note, images are self-closing! (no </img> needed)
+		- We can further supplement this with a caption with the alt attribute
+
+
+- Anchors allow one to add links to a websote.
+	<a href="URL" id="identifier">Text to display the link with</a>
+		- "href" is the URL link
+		- Can also be used to reference other sections of the HTML file
+			- These requires a #id attribute name, set by using the id="name" attribute
+		- target="_blank" ensures that link is opened in a new page
+		- Dead links are created using the hash symbol: href="#"
+
+- Different attributes can be nested together (<p> <a href="URL" target="_blank")>Anchor Text </a></p>
+
+- Unordered lists (bullet points) and ordered list (numbered)
+	- Unordered lists created using <ul>, followed by <li> elements, with both needing to close with </li> and </ul>.
+	- Ordered lists created using <ol><li></li></ol>
+
+- Input fields
+	- Another self-closing element, which has input, followed by a type attribute.
+		- <input tye="text"> (text is a type)
+	- Place holder text can be placed into the input field
+		- <input type="text" placeholder="this is placeolder text">
+
+- Actions
+	- It is possible to simply submit data to a server by specifying an action attribute on your form element.
+		- <form action="url-where-you -want-to-submit-form-data">
+			<input>
+		</form>
+
+	- It is also possible to create a button where people can submit data towards.
+		- <button type="submit">this button submits the form</button>
+
+	- It is possible to make sure that certain input fields are required. This is achieved by adding the "required" attribute with the input statement
+		- <input type="text" required>
+
+- Ratio buttons <input type="radio"></input>
+	- Another tye of input (instead of text)
+	- Can be nested inside of a "label" element, which will assoiciate the radio button input with the label element. 
+	- All related radio buttons should have the same name attribute. By creating a radio group, selecting any single radio button will automatically deslect the other buttons within the same group ensuring only one answer is provided by the user.
+		- It is recommended to use the "id" attribute, as well as the "for" attribute (which refers back to the "id") in order to allow "assistive technologies" (don't know what this is, but probably like packagesof the sort) to create a relationship between the label and the related input element.
+
+- Checkboxes <input type="checkbox"></input>
+	- Another type of input
+	- Each checkbox can be nested within its own element
+	- All related checkboxes should have the same name attribute
+	- Each label should have a "for" attribute to match the "id"attribute of the associated "input" element.
+		- <label for="loving"><input id="loving" type="checkbox" name="personality" value="love" checked required> Loving</label>
+
+	- In general, always incase within a "label" element with a "for" attribute which is the same as the "id" of the input. Also make sure that related input fields are named together to form a group.
+
+	- With all input fields, the default option which get returned to the server is "on", which is not very useful. Hence, one should also always provide the "value" attribute, with the inputs reporting the name=value of the input field.
+
+	- Pre-selected default options can be specified by the "checked" attribute.
+
+- Division element <div></div>
+	- Probably the most used general purpose container for other elements.
+	- Not sure about its functionality yet, but I know at least that it exists.
+
+- Important elements which give overall structure to a page.
+	- This includes <!DOCTYPE ...> where "..." is filled by the type of document. This will most often be "html". This is not case sensitive.
+		- This is followed by <html></html> tags, which form the body of the code.
+	- We normally also include a <head></head> element, as well as a <body></body> element.
+		- <head></head> includes elements such as <link />, <meta />, <tytle /> and <style />
+
+
+
+- Side note:
+	- There are elements, which each can have attributes (which will depend on the element). Some elements are self-closed (like an image), whilst others are not.
+	- There is a general structure to HTML files, which has been covered.
+
+
