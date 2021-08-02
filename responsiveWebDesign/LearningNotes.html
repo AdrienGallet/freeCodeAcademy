@@ -187,6 +187,7 @@ Date: 2021.08.01
 	- Two main types of measurements:
 		- Absolute: mm, in, px
 		- Relative: em, rem ("em" is based on font, rem don't know yet)
+			- Can also be percentage of its parent element (%)
 
 - CSS inheritance
 	- Body can also be styled, meaning everything within the "body" of the document will be styled that way.
@@ -250,6 +251,32 @@ Date: 2021.08.01
 			}
 		</style>
 		- Gets applied everywhere in the document (to be fair, not 100% aware of how this works yet)
+
+
+Date: 2021.08.02
+	Learning about Applied Visual Design
+
+- Alignment options:
+	- The "text-align" property instructs how to place the text.
+		- justify: causes all lines of text except the last line to meet the left and right edges of the line box
+		- center: centers the text
+		- right: right-aligns the text
+		- left: left-aligns the text (default)
+
+- Other useful styles:
+	<style>
+		.class-name {
+			text-align: center;
+			width: 245px;
+			height: 100px;
+			text-decoration:  underline;
+		}
+	</style>
+	- Can use the <strong></strong> tags wrapped around text to make it bold
+		- It applies the font-weight: bold style to it
+	- Can use the <u></u> to underline (text-decoration: underline;), and <em></em> to emphasise text (font-weight: italic;)
+	- Can also use <s></s> for strikethrough (text-decoration: line-through)
+	- <hr> tags create a seperated fir the entire width of the box
 
 
 	
