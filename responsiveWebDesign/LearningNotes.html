@@ -223,6 +223,35 @@ Date: 2021.08.01
 		- This reduces it to 4096 colors
 	- A further option uses the rbg(X, X, X) command
 		- Where X is 0-255 for RGB respectively
+
+- CSS variables
+	- Can be created using two hyphens in front of it, and then assinging some value
+	- These can then be used with the "var()" notation
+	<style>
+		.cat {
+			--cat-skin:  gray;
+		}
+		.cat-top {
+			background:  var(--cat-skin, black); /* ", black" is a back-up variable
+		}
+	</style>
+
+- Compatability and browser fallbacks
+	- A browser will ignore the CSS properties which it does not recognize or support
+		- IE doesn't support CSS variables for example
+		- Hence, it is a good idea to provide a more widely supported value before the complicated use
+		- That way, the browswer will be able to use that first CSS declaration
+			- intead of falling back onto some other default value
+	- Pseudo-class selector :root
+		<style>
+			:root {
+				background: gray;
+				--new-variable: red;
+			}
+		</style>
+		- Gets applied everywhere in the document (to be fair, not 100% aware of how this works yet)
+
+
 	
 
 
