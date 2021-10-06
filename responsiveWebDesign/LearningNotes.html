@@ -358,6 +358,130 @@ Date: 2021.08.09
 	- By setting the margin to auto, one can automatically center a block element to the centre
 
 
+Date: 2021.08.13
+
+- Learn about Complementary Colors
+	- Color can draw attention to content, evoke emotions, or create visual harmony.
+	- Color wheel
+		- Colors which are apposite each other are "complementary colors"
+			- When combined, the create a gray color
+			- WHen side by side, the produce a strong visual contrast
+
+- Learn about Tertiary Colors
+	- RGB color theory
+		- Primary colors are red, green, blue
+		- Secondary colors: cyan (G+B), magenta (R+B), yellow (R+G)
+			- Red and cyan are complementary, so is green with magenta, etc.
+		- Tertiary colors
+			- Primary color mixed with a secondary color (Red + yellow = orange)
+
+- HSL
+	- hsl() is the hue, saturation and lightness color command
+		- Hue: color which goes from 0 to 360
+		- Saturation: 100% (no gray) to 0% (only gray)
+		- Lightness: 0% (black) to 100% (white), 50% is normal color
+	- Red = hsl(0, 100%, 50%), yellow = hsl(60, 100%, 50%), etc.
+	- Mixing white creates a tint, adding black creates a shade.
+		- Saturation dedices how much gray there is, lightness how much white or black
+
+- Gradients
+	- Linear gradients
+		<style>
+			.class_what {
+				background:  linear-gradient(90deg, red, yellow, blue);
+				background:  repeating-linear-gradient(90deg, red 0px, yellow 40px);
+			}
+		</style>
+		- linear-gradient(degree direction, color1, color2, color3, etc.)
+			- Degree direction measured clockwise, with top to bottom = 0deg
+
+- Background patterns
+	- background: url('image url')  provides a background image which repeats infinitely over the screen
+
+- Transform
+	- Transform property can take in the scale() function to change the size of things
+	- By combining the :hover pseudo-class, one can implement some interactivity on the site
+	- skewX(xdeg) transforms an element by a set amount of degrees about the X-axis, and skewY(xdeg) about the Y-axis
+
+Using these various properties and selectors, one can easily generate various types of shapes
+
+- ::before and ::after pseudo elements
+	- Used to add something before or after an HTML element.
+	- Still required the "content" property, which is set to an empty string.
+	<style>
+		.heart::after {
+		background-color: blue;
+		content: "";
+		border-radius: 25%;
+		position: absolute;
+		width: 50px;
+		height: 50px;
+		top: 0px;
+		left: 25px;
+		}
+	</style>
+
+- Animations
+	- Animations can be set-up by using the animation properties (of which there are 8) along with the @keyframes CSS selector.
+	<style>
+		#anim {
+			animation-name:  colorful;
+			animation-duration:  3s;
+			animation-fill-mode: forwards; /* This ensures the final state is preserved after the animation has finished. */
+			animation-iteration-count: infinite;
+			animation-timing-function: ease; /* Determines the acceleration state of the animation */
+		}
+
+		@keyframes colorful {
+			0% {
+				background-color:  blue;
+			}
+
+			100% {
+				background-color: yellow;
+			}
+		}
+	</style>
+	- The @keyframes establishes the animation-name, and uses percentage properties in order to assign certain states between start (0%) and end (100%) of the animation.
+	- Animations allow us to move around objects, by changing the positions of elements, etc.
+	- The "animation-timing-function" can also be supplied with a cubic bezier function, which allows one to set-up custom timing functions by providing the p1 and p2 coordinates (p1=(0,0) and p3=(1,1)).
+
+
+Applied accessibility
+	- Always provide an "alt" property for images (helps with SEO)
+	- Provide ONE and ONLY ONE <h1></h1> tag which desribes your page
+	- Also, don't jump heading types just because they look better. Simply use CSS with the elementor selector to change how an element looks.
+	- <main><header><footer><nav><article><section></section></article></nav></footer></header></main>
+		- main should only exist ONCE, and not contain content which is repeated across pages
+		- <div> - groups content, <section> - groups related content, <article> - groups independent, self-contained content (</article></section></div>)
+		- <header> content is used for elements which are repeated on each space (yet different from the <head></head> element, which is used for meta-information) </header>
+		- <nav> and <footer> are used for navigation and footer links respectively. Note that all of these are used to help out assistive devices. </footer> </nav>
+	- Audio is added using the following element:
+	    <audio controls>
+	      <source src="https://s3.amazonaws.com/freecodecamp/screen-reader.mp3" type="audio/mpeg">
+	    </audio>
+    - Simply add captions to figures by using the <figcaption></figcaption> element, which is added within a figure element.
+    - Can use fieldsets to explain a field of elements (for accessability reasons)
+    - CSS can be used to move screen reader only elements off the screen.
+    	<style>
+    		.sr-only {
+			position: absolute;
+			left: -10000px;
+			width: 1px;
+			height: 1px;
+			top: auto;
+			overflow: hidden;
+			}
+		</style>
+	- Always ensure that sufficient contrast is provided between colors.
+	- Also avoid using colors which would make it difficult for color-blind people to read (consider adding black to a darker color or "tinting" (adding white) to a lighter color)
+	- Eeasily add access keys for keyboard only users by using the "accesskey" property for elements.
+	- The "tabindex" property allows one to ensure that other non-input fields become tab-able. The number specified above 0 sets the order in which the elements are selected.
+
+
+Responsive web design principles
+
+
 
 
 
