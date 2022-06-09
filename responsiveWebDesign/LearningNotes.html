@@ -92,7 +92,7 @@ HTML5 Eelements
 
 
 Date: 2021.08.01
-	Second day, learning more about syping and basic CSS
+	Second day, learning more about scoping and basic CSS
 
 - Style attribute
 	<h2 style="color: blue;">CatPhotoApp</h2> <!-- inline style -->
@@ -313,7 +313,7 @@ Date: 2021.08.09
 - CSS Box Model
 	- Each block-level item automatically starts on a new line
 	- Inline items are simply placed within the surrounding content
-	- There is a defail layout of elements called "normal flow"
+	- There is a default layout of elements called "normal flow"
 	- position: relative; with bottom, left, right, top: xpx
 	<style>
 		p {
@@ -329,7 +329,7 @@ Date: 2021.08.09
 	<style>
 		p {
 			position: absolute;
-			bttom: 10px; /*Would move 10px up */
+			bottom: 10px; /*Would move 10px up */
 		}
 	</style>
 	- This will set the absolute position of an HTML element, yet still scroll
@@ -479,8 +479,38 @@ Applied accessibility
 	- The "tabindex" property allows one to ensure that other non-input fields become tab-able. The number specified above 0 sets the order in which the elements are selected.
 
 
+2021.10.05: continued effort after a somewhat extended break
 Responsive web design principles
-
+- Can add media quries for when we want specific styles to occur only when specific media conditions are met:
+	<style>
+	@media (max-height: 800px){
+		font-size: 10px
+	}
+	</style>
+	- Format is "@media (__conditions__)"{CSS}
+- Responsive images are achieved by providing the following
+	<style>
+		img {
+			max-width: 100%;
+			height: auto;
+		}
+	</style>
+	- This will always ensure photos are never larger than the boxes they are in, and height: auto makes sure the same aspect ratio is used
+- Pixels per inch (PPI) / dots per inch (DPI)
+	- Some displays have high resolution screens. This can cause images to look pixelated. In order to avoid this, it is recommended to specify images as half the pixels they actually are, which should always ensure a sufficient PPI
+	<style>
+		img {
+			height:  100px;
+			width:  100px;
+		}
+	</style>
+- Viewport units allow one to spcify units based on the displays viewport (screen), allowing more responsive sizing
+	- Units which exist include: 
+		- vw: viewport width (as a percentage of total width, hence 10vw = 10% of viewport width)
+		- vh: viewport height (same as above, except for height)
+		- vmin: minimum of either width of height of the screen
+		- vmax: maximum of the above
+	= 
 
 
 
