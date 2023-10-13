@@ -39,7 +39,11 @@ HTML works by using *opening*  `<>` and *closing* tags  `</>`.
 - HTML5 elements
   - Some HTML5 elements are there to make a web-page easier to read and help with Seach Engine Optimisation (SEO) and accessibility.
   - Ex: `<main>` is one of them.
-  - Ec: `<section>` 
+  - Ex: `<section>` 
+  - Ex: `<footer>`
+  - Ex: `<head>`
+    - `<title>`: determines what the browser shows in the title bar or tab of a page!
+    - `<meta>`: *self-inclosding tags*, used to set browser behaviour.
 - Image elements
   - `<img >` is an example of a *self-closing tag*. It can be used to add an image.
 - Figure element
@@ -63,12 +67,15 @@ HTML works by using *opening*  `<>` and *closing* tags  `</>`.
   - Bolds some text
 - Form `<form>`
   - This allows one to collect information from users.
-  - Needs attribute: `action` to send data to somewhere.
+  - Needs attribute: `action` to send data to somewhere
+  - Can use different `input` elements (text or radio inputs)
+  - 
 - Inputs `<input>` 
   - Also a unique example of a *self-inclosing tag*.
   - This is an *inline* element (an element that does not appear in a new line).
+  - Assign a particular `value` to `radio` types to know which `radio` button was selected!
   - Can have several different attributes such as:
-    - `type`: can be *text*, 
+    - `type`: can be *text*, *radio*, *checkbox*
     - `name`: name of the variable to be saved.
     - `placeholder`: placeholder text to explain what goes into a particular field.
     - `required`: ensures that a field needs to be filled out to fill out the `form.
@@ -76,6 +83,18 @@ HTML works by using *opening*  `<>` and *closing* tags  `</>`.
   - Creates a clickable button.
   - This is an *inline* element (an element that does not appear in a new line).
   - Default behaviour, when inclosed within a `<form>` element is to send the `<input>` to the `action` attribute address.
+- Label `<label>`
+  - Used to associate text for an input element.
+  - VERY useful for assistive technologies like screen readers
+  - Ex: `<label><input type="radio"> cat</label>`
+- Fieldset `<fieldset>`
+  - An example of a *block-level element*
+  - Used to group related `inputs` and `labels` together.
+- Legend `<legend>`
+  - Provides a cpation within a `<fieldset>` element.
+- Doctype `<!DOCTYPE html>` 
+  - A special string known as a *decleration* and ensures the browser tries to meet industry-wide specifications.
+- 
 
 ## Nesting
 
@@ -84,6 +103,7 @@ HTML works by using *opening*  `<>` and *closing* tags  `</>`.
 ## HTML attributes
 
 - HTML *attributes* are special words used inside the **opening** tag of an element to control that element's behaviour.
+- The order of the attribute DOES NOT matter.
 - `src` attribute
   - The `src` attribute indicate the "source" from which something should be pulled (such as an image).
   - To use `src`: `<img src="google.com"`. Note that this is currently not pointing to an image.
@@ -99,6 +119,19 @@ HTML works by using *opening*  `<>` and *closing* tags  `</>`.
   - Used to provide helpful text in pre-existing fields.
 - `required` attribute
   - *static* attribute without being assigned anything, ensures a field is filled out.
+- `checked` attribute
+  - *static* attribute which ensures a certain default option (`radio` or `checkbox` inputs for example) is checked by standard.
+- `id` attribute
+  - Used to identify specific HTML elements.
+  - ID attribute must be unique from ALL other `id` values
+- `value` attribute
+  - Normally used for `radio` and `checkbox` inputs to ensure the correct `name`/`value` pair is recorded.
+- `name` attribute
+  - Ex: if multiple `radio` buttons have the same `name`, then only one of these radio buttons gets selected.
+- `for` attribute
+  - Used to associate a `<label>` element with a particular `<input>` 
+- `lang` attribute
+  - Used within the opening `<html>` element to specifiy the language of the page!
 
 
 
