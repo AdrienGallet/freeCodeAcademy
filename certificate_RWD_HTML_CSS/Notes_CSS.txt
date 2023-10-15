@@ -1,0 +1,62 @@
+# CSS Learning Notes
+
+*Cascading style sheet* (CSS) tells a browser how to display a web-page. It is what manipulates color, font, size along with others aspects of HTML elements.
+
+Places where stylesheets can be defined:
+
+- Using `<style>` within the `<head>` of the HTML file.
+- Creating a seperate txt document known as the *stylesheet*.
+  - Add it to `<head>` using the `<link>` element with `rel="stylesheet"` and `href="styles.css"` attributes. 
+
+# General structure of CSS blocks
+
+```css
+element|selector {
+    property: value;
+}
+```
+
+## Selection methods
+
+- *type selector*: identify an element by specyfing the type directly
+  
+  - Multiple types can be selected at the same time by seperating the *type selectors* using a comma-seperated list.
+
+- *id selector*: name of an `id` pre-seeded by the `#` symbol
+
+- *class selector*: name of a class, pre-ceeded by the `.` symbol
+
+```css
+/* type selector> */
+h1, h2 {
+    text-algin: center;
+}
+
+/* id selector */
+#example_id {
+    width: 250px;
+}
+
+/* class selector */
+.example_class {
+    margin-left: 100px;
+}
+```
+
+# Properties
+
+- `text-algin`: `center`
+
+- `background-color`: such as `brown`
+
+- `background-image`:
+  
+  - Use `url(text.com)` to specific location of image
+
+- `width`:
+  
+  - Absolute: 300px
+  
+  - Relative: 80% (relative to parent element)
+
+- `margin-left`, `margin-right`: invisiable space around an element. 

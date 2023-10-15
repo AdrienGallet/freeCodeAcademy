@@ -1,0 +1,209 @@
+# Learning Notes: Responsive Web Design
+
+This document contains all of the lessons from the FreeCodeCamp **Responsive Web Design** course. The course mainly teaches HTML (Hypertext Markup Language) and CSS (Cascading Style Sheets). 
+
+## Learning objectives
+
+- Learn basic HTML and CSS
+- Learn modern techniques like CSS variables
+- Learn best practicties for accessibility
+- Learn how to make web-pages respond to different screen sizes (Flebox)
+
+## Projects covered
+
+- Build a Photo App
+- Build a penguin
+- Build a quiz size
+- Build a photo gallery
+- Create a magazine article layout
+
+# HTML Learning Notes
+
+## HTML Basics
+
+HTML works by using *opening*  `<>` and *closing* tags  `</>` of *elements*.
+
+Note that some elements are *self-inclosing tags*, meaning the closing tags are not required. 
+
+Also note there is a difference between *in-line* elements and *block* elements.
+
+*Nested *elements can be created through indentation of **2** spaces.
+
+## HTML Structure
+
+Normally, an HTML page consists out of certain "structural" elements that make web-pages easier to read and help with Seach Engine Optimisation (SEO) and accessibility.
+
+- `<html>` tags around the entire page
+  
+  - Can contains a special `<DOCTYPE html>` tag before the opening `<html>` tag
+  - The `<html>` tag can have a `lan` attribute to communicate the language of the page.
+
+- `<head>` tag: menu bar, general information, etc.
+  
+  - `<title>` sets the title of the tab or the name in the title bar of a browser
+  
+  - `<meta>`, *self-inclosing tags*, used to set browser behaviour such as character encoding or viewports: `<meta name="viewport" content="width=device-width, initial-scale=1.0">`
+  
+  - `<style>` defines a local style sheet for that particular HTML page
+  
+  - `<link>` with `rel` and `href` attribute (such as for stylesheets) 
+
+- `<body>` tag: everything after the `<head>` tag
+  
+  - `<main>` tag: contains headers, images, forms, all the main content.
+    - Which can contains various `<section>` elements
+      - Should ONLY have *unique *content that never gets repeated.
+  - `<footer>`: contains more menu bars, copyrights, etc.
+
+## Common HTML elements
+
+### For structure
+
+- Heading elements `<h1>` 
+  - `h1` to `h6` heading elements signify the importance of the heading (with `h1` being the most important)
+  - Only use ONE `h1` heading, and use `h2` or lower for everything else.
+- Section `<section>` 
+  - Can be used to distinguish between specific parts of a page.
+- Div `<div>`
+  - Used mainly for design layout purposes. Useful to assign specific `id` to a group of elements!
+- Article `<article>`?
+  - Contains multiple elements that have related information. Perhaps one could have used the `<div>` for this as well.
+
+### For text
+
+- Paragraphs `<p>`  
+  - `p` elements are used to create a paragraph.
+- Comments
+  - `<!--` to `-->` are comment tags.
+- Emphasis `<em>`
+  - Provides italcis to text.
+- Strong `<strong>`
+  - Bolds some text
+- Un-ordered list `<ul>`
+  - Creates a non-numbered list (similar to Markdown)
+  - Every-item within the list needs the `<li>` and `</li>` elements
+- Un-ordered list `<ol>`
+  - Created an ordered list (by default it will be numbered)
+  - Again need to use `<li>` elements
+- Anchor element `<a>`
+  - Enables links with the `href` attribute)
+  - Text to be linked goes between the closing and opening `a` tags
+- **ANY** text/element can be turned into a link by using the `a` anchor tags around it.
+
+```html
+<a href="google.com"><img src="URL.com"></a>
+<p> This is a <a href="https://freecodecamp.org">website</a></p>
+```
+
+### For images
+
+- Image elements
+  - `<img>` is an example of a *self-closing tag*. It can be used to add an image.
+  - `src` attribute indicates where the image comes from.
+  - `alt` attribute gives a description of the image (good for accessibility).
+- Figure element
+  - Useful to enclose an `<img>` element within a `<figure>` element.
+  - Option to provie a caption using `<figcaption>`.
+
+```html
+<figure>
+    <img src"link_to_image.jpg" alt="Useful description">
+    <figcaption>Visual caption</figcaption>
+</figure>
+```
+
+### For inputs
+
+- Form `<form>`
+  
+  - This allows one to collect information from users.
+  - Needs attribute: `action` to send data to somewhere
+  - Can use different `input` elements (text or radio inputs)
+
+- Inputs `<input>` 
+  
+  - Also a unique example of a *self-inclosing tag*.
+  - This is an *inline* element (an element that does not appear in a new line).
+  - Can have several different attributes such as:
+    - `type`: can be *text*, *radio*, *checkbox*
+    - `name`: name of the variable to be saved.
+    - `placeholder`: important for *text* type to explain the kind of response one looks for.
+    - `required`: *standalone* attribute, ensures that a field needs to be filled out to complete the `form`. 
+    - `value`: important for *radio* and *checkbox*, allows backend database to know what value to assign to that variable
+    - `checked`: *standalone* attribute, default option
+
+- Button `<button>` 
+  
+  - Creates a clickable button.
+  - This is an *inline* element (an element that does not appear in a new line).
+  - Default behaviour, when inclosed within a `<form>` element is to send the `<input>` to the `action` attribute address.
+
+- Label `<label>`
+  
+  - Used to associate text for an input element.
+  - CRUCIAL for assistive technologies like screen readers to know what the avaiable inputs are (such as for checkbox, or radio labels.
+
+- Fieldset `<fieldset>`
+  
+  - Used to group related `inputs` and `labels` together.
+  - An example of a *block-level element*
+  - Gives the option of creating a `legend` element!
+
+```html
+<form action="destination.com">
+    <fieldset>
+        <legend>Is your cat an indoor or outdoor cat?</legend>
+        <label><input id="indoor" type="radio" name="indoor-outdoor" value="indoor" checked> Indoor</label>
+        <label><input id="outdoor" type="radio" name="indoor-outdoor" value="outdoor"> Outdoor</label>
+    </fieldset>
+    <button type="submit">Submit</button>
+</form>
+
+<form action="destination.com">
+    <fieldset>
+        <legend>What's your cat's personality?</legend>
+        <input id="loving" type="checkbox" name="personality" value="loving" checked> <label for="loving">Loving</label>
+        <input id="lazy" type="checkbox" name="personality" value="lazy"> <label for="lazy">Lazy</label>
+        <input id="energetic" type="checkbox" name="personality" value="energetic"> <label for="energetic">Energetic</label>
+    </fieldset>
+</form>
+```
+
+## Common HTML attributes
+
+HTML *attributes* are special words used inside the **opening** tag of an element to control that element's behaviour.
+
+The order of the attribute DOES NOT matter.
+
+- `src` attribute
+  - The `src` attribute indicate the "source" from which something should be pulled (such as an image).
+  - To use `src`: `<img src="google.com"`. Note that this is currently not pointing to an image.
+- `alt` attribute
+  - Considered at the *attribute* text, and improves accessibiity and is displayed if the image fails to load.
+  - `<img alt="Test">` 
+  - Note the use of "" quotation marks.
+- `target` attribute
+  - Works specifically with the `a` anchor element. By providing `target="_blank"` it opens the `href` link in a new tab.
+- `action` attribute
+  - Used with `<form>`, and indicates where the data should be sent.
+- `placeholder` attribute
+  - Used to provide helpful text in pre-existing fields.
+- `required` attribute
+  - *static* attribute without being assigned anything, ensures a field is filled out.
+- `checked` attribute
+  - *static* attribute which ensures a certain default option (`radio` or `checkbox` inputs for example) is checked by standard.
+- `id` attribute
+  - Used to identify specific HTML elements.
+  - ID attribute must be unique from ALL other `id` values
+- `value` attribute
+  - Normally used for `radio` and `checkbox` inputs to ensure the correct `name`/`value` pair is recorded.
+- `name` attribute
+  - Ex: if multiple `radio` buttons have the same `name`, then only one of these radio buttons gets selected.
+- `for` attribute
+  - Used to associate a `<label>` element with a particular `<input>` 
+- `lang` attribute
+  - Used within the opening `<html>` element to specifiy the language of the page!
+- `rel` attribute
+  - Used to explain the relationship between something (ex: `rel="stylesheet"`)
+- `menu` attribute
+  - CRUCIAL for CSS, can assign a block, element, any tag to a particular "class".
