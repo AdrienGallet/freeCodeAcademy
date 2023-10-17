@@ -6,7 +6,7 @@ Places where stylesheets can be defined:
 
 - Using `<style>` within the `<head>` of the HTML file.
 - Creating a seperate txt document known as the *stylesheet*.
-  - Add it to `<head>` using the `<link>` element with `rel="stylesheet"` and `href="styles.css"` attributes. 
+  - Add it to `<head>` using the `<link>` element with `rel="stylesheet"` and `href="styles.css"` attributes.  `<link>` is *self-inclosing*!
 
 # General structure of CSS blocks
 
@@ -25,6 +25,16 @@ element|selector {
 - *id selector*: name of an `id` pre-seeded by the `#` symbol
 
 - *class selector*: name of a class, pre-ceeded by the `.` symbol
+  
+  - An HTML element can be assigned a particular `<class>` attribute
+
+- *hybrid* selectors: combination of *class* selector, 
+  
+  - Elements nested within another parent element can be selected as well.
+
+- *pseudo selector*: used to style elements that have under-gone a certain 
+  
+  - Ex: `a:visited`, `a:hover`, `a:active`
 
 ```css
 /* type selector> */
@@ -38,25 +48,74 @@ h1, h2 {
 }
 
 /* class selector */
-.example_class {
+.example_class, .another_example {
     margin-left: 100px;
+}
+
+/* hybrid selector */
+.example_class p {
+    margin-right: 80%;
+}
+
+/* pseudo selector */
+.a:visited {
+    color: grey;
 }
 ```
 
-# Properties
+# Basic Properties
 
-- `text-algin`: `center`
-
-- `background-color`: such as `brown`
-
+- `text-algin`: center
+- `background-color`: brown
 - `background-image`:
-  
   - Use `url(text.com)` to specific location of image
-
 - `width`:
-  
   - Absolute: 300px
-  
   - Relative: 80% (relative to parent element)
+- `margin`: sets invisiable space around an element
+  - By itself it is consdiered as a *shorthand property*
+  - `margin-left`, `margin-right`: invisiable space around an element. 
+- `display`: inline-block, block
+- `padding` (short-hand): 20px
+  - Can also have `padding-left`, `padding-top`, `padding-bottom`, `padding-right`
+- `max-width`: 500px, useful for screen that might be very wide
+- `font-family`: sans-serif
+- `height`: 3px
+- `border-color`: brown
 
-- `margin-left`, `margin-right`: invisiable space around an element. 
+# Color models
+
+There are two main color models:
+
+1. *Additive* RGB (red, green , blue): begin as black, and changes colors when different red, green and blue are introduced: `rgb(0, 0, 0)` is black.
+   
+   - `rgb()` is an example of a *function* (takes inputs, performs specific actions)
+   
+   - Numbers can be between `0` to `255`
+
+2. *Subtractive* CMYK (Cyan, magenta, yellow, black)
+
+3. *HSL* (hue, saturation, lightness) `hsl(0, 60%, 50%)`
+   
+   - Note that the `%` is mandatory for saturation and lightness.
+
+4. *Hex* colors: starts with `#` and takes six characters from `0`-`9` and `A`-`F` (works similar to RGB scheme)
+
+The color wheel can help to identify similar colors (known as *hues*), as well as colors that are opposite each other (*complementary colors*). Two *complementary colors* can provide strong visual onstrast and appear brighter. If over-used, then this can be distracting.
+
+- General guidance: Pick one color as the dominant color, and use its complemtary color as an accent to bring atteiotn to certain content on the page. This works especially well when the accent color is surrounded by the dominant color.
+
+Colors can also be defined using *hexadeicmal* values:
+
+- A hex color starts with `#` and takes six characters from `0`-`9` and `A`-`F`.
+
+- 
+
+# Tips and tricks
+
+- Fall-back options
+  - Provided using a `,` after setting one property.
+- Providing multiple values
+  - Depending on the property, and if *shorthand* versions exist, then it can have unique applications: `margin: 10px auto`
+- Adding multiple classes
+  - Multiple classes are provided by seperating them with ` ` spaces within the element attribute `class` itself.

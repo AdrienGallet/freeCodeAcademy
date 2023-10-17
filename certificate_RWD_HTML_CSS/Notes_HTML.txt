@@ -27,6 +27,8 @@ Note that some elements are *self-inclosing tags*, meaning the closing tags are 
 
 Also note there is a difference between *in-line* elements and *block* elements.
 
+- *Block* element take up the entire width of their parent elements.
+
 *Nested *elements can be created through indentation of **2** spaces.
 
 ## HTML Structure
@@ -42,7 +44,7 @@ Normally, an HTML page consists out of certain "structural" elements that make w
   
   - `<title>` sets the title of the tab or the name in the title bar of a browser
   
-  - `<meta>`, *self-inclosing tags*, used to set browser behaviour such as character encoding or viewports: `<meta name="viewport" content="width=device-width, initial-scale=1.0">`
+  - `<meta>`, *self-inclosing tags*, used to set browser behaviour such as character encoding or viewports: `<meta name="viewport" content="width=device-width, initial-scale=1.0">`. This one ensures the page looks the same on all devices.
   
   - `<style>` defines a local style sheet for that particular HTML page
   
@@ -68,6 +70,10 @@ Normally, an HTML page consists out of certain "structural" elements that make w
   - Used mainly for design layout purposes. Useful to assign specific `id` to a group of elements!
 - Article `<article>`?
   - Contains multiple elements that have related information. Perhaps one could have used the `<div>` for this as well.
+- Divider `<hr>`
+  - *Self-inclosing* element.
+  - 
+  - Adds a divider filling the width of some text. 
 
 ### For text
 
@@ -205,5 +211,7 @@ The order of the attribute DOES NOT matter.
   - Used within the opening `<html>` element to specifiy the language of the page!
 - `rel` attribute
   - Used to explain the relationship between something (ex: `rel="stylesheet"`)
-- `menu` attribute
+- `class` attribute
   - CRUCIAL for CSS, can assign a block, element, any tag to a particular "class".
+  - Multiple classes can be privded using ` ` spaces.
+  - Styles of later classes over-ride the first classes.
