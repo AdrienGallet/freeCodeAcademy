@@ -27,8 +27,9 @@ element|selector {
 - *class selector*: name of a class, pre-ceeded by the `.` symbol
   
   - An HTML element can be assigned a particular `<class>` attribute
+  - Multiple classes can be selected at the same time by using a `,`! (same as type selector)
 
-- *hybrid* selectors: combination of *class* selector, 
+- *hybrid* selectors: combination of *class* selector
   
   - Elements nested within another parent element can be selected as well.
 
@@ -82,6 +83,13 @@ h1, h2 {
 - `font-family`: sans-serif
 - `height`: 3px
 - `border-color`: brown
+- `border`: general property that almost all elements have got.
+  - `border-left: width style color`, allows one to set multiple properties at once.
+- `opacity`: number between 0.0 to 1.0, sets how see-through something is (alpha value in Matplotlib) 
+  - `box-shadow: offsetX offsetY [blurRadius] color`: allows one to add shadows to an element
+    - offsetX and offsetY takes px and other CSS units as inputs
+      - Positive offsetX --> right direction
+      - Positive offsetY --> up
 
 # Color models
 
@@ -92,6 +100,8 @@ There are two main color models:
    - `rgb()` is an example of a *function* (takes inputs, performs specific actions)
    
    - Numbers can be between `0` to `255`
+   
+   - NOTE: `rgba()` add another number set at the *alpha channel* (which controls the opacity).
 
 2. *Subtractive* CMYK (Cyan, magenta, yellow, black)
 
@@ -103,18 +113,26 @@ There are two main color models:
 
 The color wheel can help to identify similar colors (known as *hues*), as well as colors that are opposite each other (*complementary colors*). Two *complementary colors* can provide strong visual onstrast and appear brighter. If over-used, then this can be distracting.
 
-- General guidance: Pick one color as the dominant color, and use its complemtary color as an accent to bring atteiotn to certain content on the page. This works especially well when the accent color is surrounded by the dominant color.
+General guidance: Pick one color as the dominant color, and use its complemtary color as an accent to bring atteiotn to certain content on the page. This works especially well when the accent color is surrounded by the dominant color.
 
-Colors can also be defined using *hexadeicmal* values:
+Other useful functions:
 
-- A hex color starts with `#` and takes six characters from `0`-`9` and `A`-`F`.
-
-- 
+- `linear-gradient(gradientDirection, color1 [length1], color2 [length2], ...)`
+  
+  - Transitions one color to another, along with setting a direction.
+  
+  - gradientDirection: `90deg`, `45deg`, etc.
+  
+  - color1, color2: simply colors (set by HSL, Hex, CMYK or RGB)
+  
+  - lenght1, length 2: distances at which color change should occur, `px` or `%`
+  
+  - NOTE: this creates an image! (hence need to use the `background` property)
 
 # Tips and tricks
 
 - Fall-back options
-  - Provided using a `,` after setting one property.
+  - Provided using a `,` after setting one property: `font-family: sans-serif, serif`
 - Providing multiple values
   - Depending on the property, and if *shorthand* versions exist, then it can have unique applications: `margin: 10px auto`
 - Adding multiple classes

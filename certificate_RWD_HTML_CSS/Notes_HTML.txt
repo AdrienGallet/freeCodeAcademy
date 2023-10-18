@@ -68,11 +68,11 @@ Normally, an HTML page consists out of certain "structural" elements that make w
   - Can be used to distinguish between specific parts of a page.
 - Div `<div>`
   - Used mainly for design layout purposes. Useful to assign specific `id` to a group of elements!
+  - Note: by default this is a block-element (takes up entire width of the parent element, and send whatever is next to the next line).
 - Article `<article>`?
   - Contains multiple elements that have related information. Perhaps one could have used the `<div>` for this as well.
 - Divider `<hr>`
   - *Self-inclosing* element.
-  - 
   - Adds a divider filling the width of some text. 
 
 ### For text
