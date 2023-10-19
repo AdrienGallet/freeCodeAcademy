@@ -131,12 +131,15 @@ Normally, an HTML page consists out of certain "structural" elements that make w
   - Also a unique example of a *self-inclosing tag*.
   - This is an *inline* element (an element that does not appear in a new line).
   - Can have several different attributes such as:
-    - `type`: can be *text*, *radio*, *checkbox*
-    - `name`: name of the variable to be saved.
+    - `type`: can be *text*, *radio*, *checkbox*, *password*, *email*, *submit*, *file*, *number*. 
+    - `name`: name of the variable to be saved. If type *radio* inputs have the same `name`, then only one of them will be selected.
     - `placeholder`: important for *text* type to explain the kind of response one looks for.
     - `required`: *standalone* attribute, ensures that a field needs to be filled out to complete the `form`. 
     - `value`: important for *radio* and *checkbox*, allows backend database to know what value to assign to that variable
     - `checked`: *standalone* attribute, default option
+  - The first input element with a `type` of submit is automatically set to submit its nearest parent `form` element.
+  - Custom validation
+    - `min-length` attribute can force a minimum length for an input.
 
 - Button `<button>` 
   
@@ -215,3 +218,10 @@ The order of the attribute DOES NOT matter.
   - CRUCIAL for CSS, can assign a block, element, any tag to a particular "class".
   - Multiple classes can be privded using ` ` spaces.
   - Styles of later classes over-ride the first classes.
+- `method` attribute
+  - Determines how to send form-data to the URL specified.
+  - There are two main methods: `POST` and `GET`
+- `min-length` attribute
+  - Mainly used for `input` elements, sets a minimum length of a text response.
+- `min` and `max` attribute
+  - Set the minimum or maximum number which a *number* input type can be.

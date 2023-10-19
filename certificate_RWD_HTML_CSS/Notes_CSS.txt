@@ -64,7 +64,7 @@ h1, h2 {
 }
 ```
 
-# Basic Properties
+# Basic Properties (needs revision)
 
 - `text-algin`: center
 - `background-color`: brown
@@ -90,6 +90,10 @@ h1, h2 {
     - offsetX and offsetY takes px and other CSS units as inputs
       - Positive offsetX --> right direction
       - Positive offsetY --> up
+- Common units
+  - `vh` stands for viewport height, it is relative to 1% of the height of the viewport (of the user?)
+  - `rem` stands for "root `em`", and it relative to the font size of the `html` element
+  - 
 
 # Color models
 
@@ -109,7 +113,7 @@ There are two main color models:
    
    - Note that the `%` is mandatory for saturation and lightness.
 
-4. *Hex* colors: starts with `#` and takes six characters from `0`-`9` and `A`-`F` (works similar to RGB scheme)
+4. *Hex* colors: starts with `#` and takes six characters from `0`-`9` and `A`-`F` (works similar to RGB scheme). Adding two more characters provides the alpha channel.
 
 The color wheel can help to identify similar colors (known as *hues*), as well as colors that are opposite each other (*complementary colors*). Two *complementary colors* can provide strong visual onstrast and appear brighter. If over-used, then this can be distracting.
 
@@ -137,3 +141,5 @@ Other useful functions:
   - Depending on the property, and if *shorthand* versions exist, then it can have unique applications: `margin: 10px auto`
 - Adding multiple classes
   - Multiple classes are provided by seperating them with ` ` spaces within the element attribute `class` itself.
+- Viewport tricks
+  - Setting `width: 100%`, `height: 100vh` and `margin: 0` creates a page that is not scrollable (normally)
