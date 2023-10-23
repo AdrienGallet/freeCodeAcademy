@@ -36,6 +36,8 @@ element|selector {
 - *pseudo selector*: used to style elements that have under-gone a certain 
   
   - Ex: `a:visited`, `a:hover`, `a:active`
+  - Ex: `p:last-of-type`
+- *attribute selector*: selects an element based on a given attribute value. See syntax
 
 ```css
 /* type selector> */
@@ -61,6 +63,11 @@ h1, h2 {
 /* pseudo selector */
 .a:visited {
     color: grey;
+}
+
+/* attribute selector */
+input[type="submit"] {
+    display: block;
 }
 ```
 
@@ -91,7 +98,7 @@ h1, h2 {
       - Positive offsetX --> right direction
       - Positive offsetY --> up
 - Common units
-  - `vh` stands for viewport height, it is relative to 1% of the height of the viewport (of the user?)
+  - `vh` stands for viewport height, it is relative to 1% of the height of the viewport (of the user?). Allows for dynamics resizing of elements. When used with `max-width` and `min-width` one can dynamically re-size things so that they are proportioned.
   - `rem` stands for "root `em`", and it relative to the font size of the `html` element
   - 
 

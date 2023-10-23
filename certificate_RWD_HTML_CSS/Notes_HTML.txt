@@ -132,14 +132,18 @@ Normally, an HTML page consists out of certain "structural" elements that make w
   - This is an *inline* element (an element that does not appear in a new line).
   - Can have several different attributes such as:
     - `type`: can be *text*, *radio*, *checkbox*, *password*, *email*, *submit*, *file*, *number*. 
-    - `name`: name of the variable to be saved. If type *radio* inputs have the same `name`, then only one of them will be selected.
+    - `name`: name of the variable to be saved. If type *radio* inputs have the same `name`, then only one of them will be selected. Is also used to identfy the element in the form sbmission.
     - `placeholder`: important for *text* type to explain the kind of response one looks for.
     - `required`: *standalone* attribute, ensures that a field needs to be filled out to complete the `form`. 
-    - `value`: important for *radio* and *checkbox*, allows backend database to know what value to assign to that variable
+    - `value`: important for *radio* and *checkbox* (and others), allows backend database to know what value to assign to that variable
     - `checked`: *standalone* attribute, default option
-  - The first input element with a `type` of submit is automatically set to submit its nearest parent `form` element.
+  - The first input element with a `type` of *submit* is automatically set to submit its nearest parent `form` element.
   - Custom validation
     - `min-length` attribute can force a minimum length for an input.
+
+- Textarea `<textarea>`
+  
+  - Provides a multi-line text input, with pre-set size of `rows` and `cols` 
 
 - Button `<button>` 
   
@@ -149,7 +153,7 @@ Normally, an HTML page consists out of certain "structural" elements that make w
 
 - Label `<label>`
   
-  - Used to associate text for an input element.
+  - Used to associate text for an input element using `for` that matches the `id` of the `input` element.
   - CRUCIAL for assistive technologies like screen readers to know what the avaiable inputs are (such as for checkbox, or radio labels.
 
 - Fieldset `<fieldset>`
@@ -157,6 +161,11 @@ Normally, an HTML page consists out of certain "structural" elements that make w
   - Used to group related `inputs` and `labels` together.
   - An example of a *block-level element*
   - Gives the option of creating a `legend` element!
+
+- Select `<select>`
+  
+  - Give a drop-down menu for a group of `<option>` element.
+  - Both `<select>` and `<option>` elements require closing tags.
 
 ```html
 <form action="destination.com">
@@ -223,5 +232,7 @@ The order of the attribute DOES NOT matter.
   - There are two main methods: `POST` and `GET`
 - `min-length` attribute
   - Mainly used for `input` elements, sets a minimum length of a text response.
-- `min` and `max` attribute
+- `min` and `max` attributes
   - Set the minimum or maximum number which a *number* input type can be.
+- `rows` and `cols` attributes
+  - Sets the number of rows and columns to use within a `<textarea>` element initially.
