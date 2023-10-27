@@ -37,6 +37,7 @@ element|selector {
   
   - Ex: `a:visited`, `a:hover`, `a:active`
   - Ex: `p:last-of-type`
+
 - *attribute selector*: selects an element based on a given attribute value. See syntax
 
 ```css
